@@ -2,7 +2,9 @@
 const io = require('socket.io-client');
 var socket = io.connect('http://localhost:8080');
 
-socket.on('configChange', function(configData) {});
+socket.on('UPDATED_CONFIG', function(configData) {
+	console.log(configData);
+});
 
 
 
