@@ -75,3 +75,6 @@ loadWidgets({
     }
   ]
 });
+
+
+const voiceControl = require(__dirname + '/helpers/voice-control')();
