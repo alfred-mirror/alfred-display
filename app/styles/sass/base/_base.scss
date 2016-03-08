@@ -1,6 +1,20 @@
-body, html {
+@import url(https://fonts.googleapis.com/css?family=Roboto:300,400,500);
+
+$base-color-blue: #1976D2;
+$sec-color-blue: #2196F3;
+
+
+html {
 	height: 100%;
   width: 100%;
-	padding: 0px;
 	margin: 0px;
+}
+
+body {
+  @extend html;
+  background-color: black;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  letter-spacing: 1px;
 }

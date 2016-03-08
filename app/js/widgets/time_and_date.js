@@ -1,5 +1,5 @@
 module.exports = exports = function(id, options) {
-  var moment = require('moment');
+  const moment = require('moment');
 
   var widgetLoc = document.getElementById(id);
   options = options || {
@@ -12,7 +12,7 @@ module.exports = exports = function(id, options) {
   var dateFormat = ((options.dayLong) ? 'dddd, ' : 'ddd, ')
     + ((options.monthLong) ? 'MMMM' : 'MMM')
     + ' D YYYY';
-  var timeFormat = (options.twentyFour) ? ('HH:mm') : ('hh:mm a');
+  var timeFormat = (options.twentyFour) ? ('H:mm') : ('h:mm a');
 
   // update time widget
   function updateWidget() {
