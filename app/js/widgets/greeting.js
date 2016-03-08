@@ -1,5 +1,5 @@
 module.exports = exports = function(id, options, user) {
-  const randomGreeting = require(__dirname + '/lib/random_greeting');
+  const randomGreeting = require(__dirname + '/helpers/random_greeting');
 
   var widgetLoc = document.getElementById(id);
   options = options || {
