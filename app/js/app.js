@@ -22,6 +22,7 @@ const time = require(__dirname + '/widgets/time_and_date');
 const greeting = require(__dirname + '/widgets/greeting');
 const news = require(__dirname + '/widgets/news');
 const commute = require(__dirname + '/widgets/commute');
+const weather = require(__dirname + '/widgets/weather');
 
 // load all widgets on page
 function loadWidgets(configData) {
@@ -39,6 +40,9 @@ function loadWidgets(configData) {
       break;
     case 'commute':
       commute('module-' + index, element.options);
+      break;
+    case 'weather':
+      weather('module-' + index, element.options);
       break;
     default:
       console.log('invalid module type at position ' + index);
@@ -62,8 +66,8 @@ loadWidgets({
       options: { key: 'API_KEY', newsContent: 'topStories', top: 5 }
     },
     {
-      type: 'commute',
-      options: { origins: '47.61665,-122.34291', destinations: '47.61825,-122.35079', mode: 'walking', units: 'imperial', key: 'API_KEY' }
+      type: 'weather',
+      options: { lat: '47.61665', long: '-122.35079', key: 'API_KEY', units: 'imperial' }
     },
     {
       type: 'greeting',
