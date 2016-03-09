@@ -1,7 +1,8 @@
-module.exports = exports = function(id, options) {
-  const moment = require('moment');
+const moment = require('moment');
+var widgetLoc;
 
-  var widgetLoc = document.getElementById(id);
+exports.render = function(id, options) {
+  widgetLoc = document.getElementById(id);
   options = options || {
     twentyFour: false,
     dayLong: true,
@@ -10,8 +11,8 @@ module.exports = exports = function(id, options) {
 
   // set up variables as per options
   var dateFormat = ((options.dayLong) ? 'dddd, ' : 'ddd, ')
-    + ((options.monthLong) ? 'MMMM' : 'MMM')
-    + ' D YYYY';
+  + ((options.monthLong) ? 'MMMM' : 'MMM')
+  + ' D YYYY';
   var timeFormat = (options.twentyFour) ? ('H:mm') : ('h:mm a');
 
   // update time widget
