@@ -41,5 +41,5 @@ exports.render = function(id, options, userFile) {
   }
 
   getNews();
-  setInterval(getNews, 100000);
+  return setInterval(getNews, 100000);
 };

@@ -8,7 +8,7 @@ var storedUserFile;
 // load widget(s) on page, depending on the first argument of function call
 module.exports = exports = function() {
   var modules;
-  console.log(arguments[0]);
+
   if (typeof arguments[0] === 'number') {
     // render specific position only
     modules = storedUserFile.config.modules;
@@ -20,26 +20,26 @@ module.exports = exports = function() {
 
   // render all widgets from storage
   modules = storedUserFile.config.modules;
-  modules.forEach(renderSingleWidget);
+  return modules.map((element, index) => renderSingleWidget(element, index));
 };
 
 function renderSingleWidget(element, index) {
   switch (element.type) {
   case 'time':
-    time.render('module-' + index, element.options);
-    break;
+    return time.render('module-' + index, element.options);
+
   case 'greeting':
-    greeting.render('module-' + index, element.options, storedUserFile.name);
-    break;
+    return greeting.render('module-' + index, element.options, storedUserFile);
+
   case 'news':
-    news.render('module-' + index, element.options, storedUserFile);
-    break;
+    return news.render('module-' + index, element.options, storedUserFile);
+
   case 'commute':
     commute.render('module-' + index, element.options);
     break;
   case 'weather':
-    weather.render('module-' + index, element.options, storedUserFile);
-    break;
+    return weather.render('module-' + index, element.options, storedUserFile);
+
   default:
     console.log('invalid module type at position ' + index);
   }

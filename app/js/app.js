@@ -27,17 +27,13 @@ var fakeUserFile = {
   name: { first: 'John', last: 'Doe' },
   twitter_token: String,
   weather_token: String,
-  location: { lat: '47.61665', long: '-122.35079' },
   config: {
     name: 'My config',
-    color: {
-      main: '#ffffff',
-      accent: '#2196F3'
-    },
+    color: { main: '#ffffff', accent: '#2196F3' },
     modules: [
       {
         type: 'greeting',
-        options: { greetingStyle: 'randomTicker' }
+        options: { greetingStyle: 'timebased' }
       },
       {
         type: 'time',
@@ -49,15 +45,18 @@ var fakeUserFile = {
       },
       {
         type: 'weather',
-        options: { units: 'imperial' }
+        options: {
+          location: { lat: '47.61665', long: '-122.35079' },
+          units: 'imperial'
+        }
       },
       {
         type: 'greeting',
-        options: { greetingStyle: 'timebased' }
+        options: { greetingStyle: 'randomTicker' }
       }
     ]
   }
 };
 
-initVoiceControl();
-loadWidgets(fakeUserFile);
+var intervalsOnPage = loadWidgets(fakeUserFile);
+initVoiceControl(fakeUserFile, intervalsOnPage);

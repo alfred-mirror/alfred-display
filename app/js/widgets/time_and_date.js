@@ -23,5 +23,5 @@ exports.render = function(id, options) {
   }
 
   updateWidget();
-  setInterval(updateWidget, 10000);
+  return setInterval(updateWidget, 10000);
 };

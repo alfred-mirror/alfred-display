@@ -19,7 +19,7 @@ var getTimebasedGreeting = exports.getTimebasedGreeting = function(firstName) {
   return greetStr;
 };
 
-exports.render = function(id, options, name) {
+exports.render = function(id, options, userFile) {
   var widgetLoc = document.getElementById(id);
   options = options || {
     greetingStyle: 'randomTicker'
@@ -33,7 +33,7 @@ exports.render = function(id, options, name) {
   switch (options.greetingStyle) {
   // greeting based on time of day
   case 'timebased':
-    return updateGreeting(getTimebasedGreeting(name.first));
+    return updateGreeting(getTimebasedGreeting(userFile.name.first));
 
   // random greeting from library
   case 'random':
@@ -44,7 +44,7 @@ exports.render = function(id, options, name) {
     updateGreeting(randomGreeting());
     return setInterval(function() {
       updateGreeting(randomGreeting());
-    }, 60000);
+    }, 1000);
 
   default:
     console.log('invalid greeting style');
