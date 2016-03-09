@@ -59,10 +59,6 @@ var fakeUserFile = {
       {
         type: 'greeting',
         options: { greetingStyle: 'timebased' }
-      },
-      {
-        type: 'greeting',
-        options: { greetingStyle: 'randomTicker' }
       }
     ]
   }
