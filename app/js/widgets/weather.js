@@ -22,19 +22,21 @@ exports.render = function(id, options, userFile) {
       dataType: 'json',
       crossDomain: true,
       success: function(res) {
-        var hiTemp = res.main.temp_max;
-        var loTemp = res.main.temp_min;
+        var hiTemp = res.main.temp_max + '&#176;';
+        var loTemp = res.main.temp_min  + '&#176;';
+        var currTemp = res.main.temp  + '&#176;';
         var city = res.name;
         var weatherDesc = res.weather[0].description;
         var imgLoc = res.weather[0].icon;
 
-        // TODO: style to fit small modules
-        var weatherHTML = '<article>'
-          + '<h3>Today\'s Weather in ' + city + '</h3>'
-          + '<p>' + 'High Temperature: ' + hiTemp + '</p>'
-          + '<p>' + 'Low Temperature: ' + loTemp +'</p>'
+        var weatherHTML = '<article class="weather">'
+          + '<p class="weather-title">Weather in ' + city + '</p>'
+          + '<div class="weather-body">'
+            + '<img class="weather-icon" src=\"img/weather_icons/w_' + imgLoc + '.svg\"></img>'
+            + '<p class="weather-curr">' + currTemp + '</p>'
+          + '</div>'
+          + '<p>High: ' + hiTemp + ' / Low: ' + loTemp + '</p>'
           + '<p>' + weatherDesc + '</p>'
-          + '<img src=\"http://openweathermap.org/img/w/' + imgLoc + '.png\"></img>'
           + '</article>';
 
         widgetLoc.innerHTML = weatherHTML;

@@ -46,8 +46,8 @@ var fakeUserFile = {
         options: { twentyFour: true, dayLong: true, monthLong: true }
       },
       {
-        type: 'news',
-        options: { newsContent: 'topStories', top: 5 }
+        type: 'time',
+        options: { twentyFour: false, dayLong: false, monthLong: false }
       },
       {
         type: 'weather',
@@ -58,7 +58,7 @@ var fakeUserFile = {
       },
       {
         type: 'greeting',
-        options: { greetingStyle: 'randomTicker' }
+        options: { greetingStyle: 'timebased' }
       }
     ]
   }
