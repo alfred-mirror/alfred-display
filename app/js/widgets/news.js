@@ -1,9 +1,12 @@
 exports.render = function(id, options, userFile) {
   var widgetLoc = document.getElementById(id);
-  options = options || {
-    newsContent: 'topStories',
-    top: 5
-  };
+
+  // NOTE: OPTIONS FORMAT FOR REFERENCE
+  // options = {
+  //   newsContent: 'topStories',
+  //   top: 5
+  // };
+
   var apiKey = userFile.news_token;
 
   //news content - **note needs specific api keys from nyt for different sections
@@ -32,6 +35,7 @@ exports.render = function(id, options, userFile) {
   }
 
   // runs the number of headlines the user would like to see
+  // TODO: styling
   function numOfHeadlines(res) {
     var string = '';
     for(var i = 0; i < options.top; i++) {
@@ -40,6 +44,7 @@ exports.render = function(id, options, userFile) {
     widgetLoc.innerHTML = string;
   }
 
+  // update news every hour
   getNews();
-  return setInterval(getNews, 100000);
+  return setInterval(getNews, 60 * 60 * 1000);
 };

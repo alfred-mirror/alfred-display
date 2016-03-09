@@ -3,11 +3,13 @@ var widgetLoc;
 
 exports.render = function(id, options) {
   widgetLoc = document.getElementById(id);
-  options = options || {
-    twentyFour: false,
-    dayLong: true,
-    monthLong: true
-  };
+
+  // NOTE: OPTIONS FORMAT FOR REFERENCE
+  // options = {
+  //   twentyFour: false,
+  //   dayLong: true,
+  //   monthLong: true
+  // };
 
   // set up variables as per options
   var dateFormat = ((options.dayLong) ? 'dddd, ' : 'ddd, ')
