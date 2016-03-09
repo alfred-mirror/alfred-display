@@ -2,8 +2,9 @@
   "name": "alfred-display",
   "version": "1.0.0",
   "description": "Mirror display for the IoT smart mirror, Alfred",
-  "main": "server.js",
+  "main": "main.js",
   "scripts": {
+    "start": "electron main.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -30,6 +31,7 @@
     "express": "^4.13.4"
   },
   "devDependencies": {
+    "electron-prebuilt": "^0.36.10",
     "gulp": "^3.9.1",
     "gulp-eslint": "^2.0.0",
     "gulp-sass": "^2.2.0",

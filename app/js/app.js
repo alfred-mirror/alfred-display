@@ -6,7 +6,6 @@ var socket;
 const loadWidgets = require(__dirname + '/widgets/load_widgets');
 const initVoiceControl = require(__dirname + '/lib/voice_control');
 
-// get owner id for socket connection
 $('#authForm').submit(function(e) {
   e.preventDefault();
   var authString = $(e.target).children('input[name=auth]').val();
