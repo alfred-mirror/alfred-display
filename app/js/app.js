@@ -46,8 +46,8 @@ var fakeUserFile = {
         options: { twentyFour: true, dayLong: true, monthLong: true }
       },
       {
-        type: 'news',
-        options: { newsContent: 'topStories', top: 5 }
+        type: 'time',
+        options: { twentyFour: false, dayLong: false, monthLong: false }
       },
       {
         type: 'weather',
@@ -55,6 +55,10 @@ var fakeUserFile = {
           location: { lat: 47.61665, long: -122.35079 },
           units: 'imperial'
         }
+      },
+      {
+        type: 'greeting',
+        options: { greetingStyle: 'timebased' }
       },
       {
         type: 'greeting',

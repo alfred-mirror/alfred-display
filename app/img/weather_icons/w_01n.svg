@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.3, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="120px"
+	 height="120px" viewBox="0 0 120 120" enable-background="new 0 0 120 120" xml:space="preserve">
+<g id="Layer_2" display="none">
+	<rect y="-270" display="inline" width="532" height="528"/>
+</g>
+<g id="Layer_1">
+	<g id="moon">
+		<g>
+			
+				<path fill="none" stroke="#FFFFFF" stroke-width="5.3583" stroke-linecap="round" stroke-linejoin="round" stroke-miterlimit="10" d="
+				M54.939,65.624c-11.402-11.402-15.1-27.118-11.094-41.603c-7.088,1.85-13.868,5.548-19.415,11.095
+				c-16.949,16.948-16.949,44.066,0,61.017c16.949,16.948,44.067,16.948,61.016,0c5.547-5.548,9.245-12.327,11.094-19.415
+				C82.057,80.725,66.032,77.025,54.939,65.624z"/>
+		</g>
+	</g>
+	<g>
+		<polygon fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" points="
+			68.895,20.439 72.54,27.399 80.164,28.726 74.529,34.359 75.855,41.983 68.895,38.337 61.934,41.983 63.259,34.359 57.625,28.726 
+			65.249,27.399 		"/>
+		<polygon fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" points="
+			100.278,13.246 102.829,18.028 108.25,18.984 104.424,22.812 105.062,28.232 100.278,25.681 95.496,28.232 96.453,22.812 
+			92.307,18.984 97.729,18.028 		"/>
+		<polygon fill="#FFFFFF" stroke="#FFFFFF" stroke-width="2" stroke-linejoin="round" stroke-miterlimit="10" points="
+			88.298,47.964 90.657,52.388 95.671,53.273 92.132,56.813 92.722,61.826 88.298,59.466 83.874,61.826 84.759,56.813 
+			80.924,53.273 85.938,52.388 		"/>
+	</g>
+</g>
+</svg>

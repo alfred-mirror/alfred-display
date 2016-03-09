@@ -5,7 +5,7 @@ const webpack = require('webpack-stream');
 
 const files = {
   all: [__dirname + '/app/**/*.html', __dirname + '/app/js/*.js'],
-  sass: [__dirname + '/app/styles/sass/styles.scss']
+  sass: [__dirname + '/app/styles/sass/**/*.scss']
 };
 
 gulp.task('lint', () => {
@@ -24,6 +24,11 @@ gulp.task('js:dev', () => {
     .pipe(gulp.dest(__dirname + '/build/scripts'));
 });
 
+gulp.task('img:dev', () => {
+  gulp.src(__dirname + '/app/img/**/*')
+    .pipe(gulp.dest(__dirname + '/build/img'));
+});
+
 gulp.task('webpack:dev', () => {
   gulp.src(__dirname + '/app/js/app.js')
     .pipe(webpack({
@@ -40,7 +45,7 @@ gulp.task('sass:dev', () => {
     .pipe(gulp.dest(__dirname + '/build/css'));
 });
 
-gulp.task('build:dev', ['html:dev', 'webpack:dev', 'sass:dev']);
+gulp.task('build:dev', ['html:dev', 'webpack:dev', 'sass:dev', 'js:dev', 'img:dev']);
 
 
 gulp.task('sass:watch', () => {

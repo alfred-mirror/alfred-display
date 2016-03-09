@@ -1,0 +1,55 @@
+.weather {
+  p {
+    margin: 3px auto;
+    font-size: 1.2rem;
+  }
+
+  .weather-title {
+    margin-bottom: 6px;
+  }
+
+  .weather-curr {
+    font-size: 48px;
+    margin: 0;
+    display: inline-flex;
+  }
+  .weather-icon {
+    height: 60px;
+    display: inline-flex;
+    margin-right: 16px;
+  }
+}
+
+.widget-left {
+  .weather-icon {
+    float: left;
+    margin-right: 16px;
+  }
+}
+
+.widget-right {
+  .weather-icon {
+    float: right;
+    margin-right: 0px;
+    margin-left: 16px;
+  }
+}
+
+.widget-main {
+  p {
+    font-size: 1.8rem;
+  }
+
+  .weather-title {
+    margin-bottom: 12px;
+  }
+
+  .weather-icon {
+    height: 90px;
+  }
+  .weather-curr {
+    font-size: 80px;
+    font-weight: 500;
+    letter-spacing: -1px;
+  }
+}
