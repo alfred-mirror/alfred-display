@@ -1,4 +1,5 @@
-module.exports = exports = function(id, options) {
+/* eslint-disable no-undef */
+exports.render = function(id, options) {
   var widgetLoc = document.getElementById(id);
   options = options || {
     origins: '47.61665,-122.34291',

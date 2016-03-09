@@ -1,31 +1,39 @@
-module.exports = exports = function(id, options, user) {
-  const randomGreeting = require(__dirname + '/helpers/random_greeting');
+const randomGreeting = require(__dirname + '/../lib/random_greeting');
+const moment = require('moment');
 
+// getting the time of day
+var getGreetingTime = exports.getGreetingTime = function() {
+  var splitAM = 12;
+  var splitPM = 17;
+  var currentHour = parseFloat(moment().format('H'));
+  if (currentHour < splitAM) return 'morning';
+  if (currentHour > splitPM) return 'evening';
+  return 'afternoon';
+};
+
+var getTimebasedGreeting = exports.getTimebasedGreeting = function(firstName) {
+  var greetStr = 'Good ' + getGreetingTime();
+  if (firstName) {
+    greetStr += ', ' + firstName;
+  }
+  return greetStr;
+};
+
+exports.render = function(id, options, userFile) {
   var widgetLoc = document.getElementById(id);
   options = options || {
     greetingStyle: 'randomTicker'
   };
 
-  // Helper: updating the DOM
+  // updating the DOM
   function updateGreeting(greetStr) {
     widgetLoc.innerHTML = '<p class="greeting">' + greetStr + '</p>';
-  }
-
-  // Helper: getting the time of day
-  function getGreetingTime() {
-    var splitAM = 12;
-    var splitPM = 17;
-    var currentHour = parseFloat(require('moment')().format('H'));
-    if (currentHour < splitAM) return 'morning';
-    if (currentHour > splitPM) return 'evening';
-    return 'afternoon';
   }
 
   switch (options.greetingStyle) {
   // greeting based on time of day
   case 'timebased':
-    var firstName = (user) ? user.name.first : 'Felicia';
-    return updateGreeting('Good ' + getGreetingTime() + ', ' + firstName);
+    return updateGreeting(getTimebasedGreeting(userFile.name.first));
 
   // random greeting from library
   case 'random':
@@ -36,7 +44,7 @@ module.exports = exports = function(id, options, user) {
     updateGreeting(randomGreeting());
     return setInterval(function() {
       updateGreeting(randomGreeting());
-    }, 60000);
+    }, 1000);
 
   default:
     console.log('invalid greeting style');
