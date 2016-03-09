@@ -26,8 +26,8 @@ $('#authForm').submit(function(e) {
 var fakeUserFile = {
   name: { first: 'John', last: 'Doe' },
   twitter_token: 'String',
-  weather_token: 'ac63c928ee86e580e68b306e9ddf62fb',
-  news_token: '9159dc7a40755189f3356208d9fd6691:14:61615709',
+  weather_token: 'String',
+  news_token: 'String',
 
   config: {
     name: 'My config',
