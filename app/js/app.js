@@ -25,15 +25,22 @@ $('#authForm').submit(function(e) {
 // fake data for rendering test only:
 var fakeUserFile = {
   name: { first: 'John', last: 'Doe' },
-  twitter_token: String,
-  weather_token: String,
+  twitter_token: 'String',
+  weather_token: 'String',
+  news_token: 'String',
+
   config: {
     name: 'My config',
     color: { main: '#ffffff', accent: '#2196F3' },
     modules: [
       {
-        type: 'greeting',
-        options: { greetingStyle: 'timebased' }
+        type: 'commute',
+        options: {
+          origin: { lat: 47.61665, long: -122.34291 },
+          destination: { lat: 47.61825, long: -122.35079 },
+          mode: 'walking',
+          units: 'metric'
+        }
       },
       {
         type: 'time',
@@ -41,12 +48,12 @@ var fakeUserFile = {
       },
       {
         type: 'news',
-        options: { key: 'API_KEY', newsContent: 'topStories', top: 5 }
+        options: { newsContent: 'topStories', top: 5 }
       },
       {
         type: 'weather',
         options: {
-          location: { lat: '47.61665', long: '-122.35079' },
+          location: { lat: 47.61665, long: -122.35079 },
           units: 'imperial'
         }
       },

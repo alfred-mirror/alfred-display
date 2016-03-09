@@ -1,7 +1,6 @@
 /* eslint-disable no-undef, no-inner-declarations */
 
 module.exports = exports = function(userFile, intervalsOnPage) {
-  console.log(intervalsOnPage);
   if (annyang) {
     const commands = require(__dirname + '/voice_control_cmd')(userFile, intervalsOnPage);
 
