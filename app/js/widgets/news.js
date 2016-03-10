@@ -21,7 +21,7 @@ exports.render = function(id, options, userFile) {
     break;
 
   default:
-    console.log('invalid news content');
+    console.log('invalid news content type');
   }
 
   // ajax call to NYT api - combines base URI with API_KEY
@@ -44,7 +44,15 @@ exports.render = function(id, options, userFile) {
     widgetLoc.innerHTML = string;
   }
 
-  // update news every hour
-  getNews();
-  return setInterval(getNews, 60 * 60 * 1000);
+  $.ajax(baseURI + apiKey)
+    .then(function(res) {
+      // connection is valid
+      // update news every hour
+      getNews();
+      return setInterval(getNews, 60 * 60 * 1000);
+    }, function(err) {
+      // connection failed
+      console.log(err);
+      widgetLoc.innerHTML = '<p class="warning">There was an error fetching your news feed. Please make sure you have entered a valid token.</p>';
+    });
 };

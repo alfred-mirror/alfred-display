@@ -34,7 +34,9 @@ exports.render = function(id, options) {
     // TODO: style and add icons (?)
     directionsService.route(directionsRequest, function(res, status) {
       if (status == google.maps.DirectionsStatus.OK) {
-        widgetLoc.innerHTML = res.routes[0].legs[0].distance.text + '<br/>' + res.routes[0].legs[0].duration.text;
+        widgetLoc.innerHTML = '<p class="commute">'
+          + res.routes[0].legs[0].distance.text + '<br />'
+          + res.routes[0].legs[0].duration.text + '</p>';
       } else {
         widgetLoc.innerHTML = 'Error getting commute';
       }
