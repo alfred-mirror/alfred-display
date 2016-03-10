@@ -19,9 +19,20 @@
     "IoT",
     "Alfred",
     "AI",
-    "mirror"
+    "mirror",
+    "smart mirror",
+    "magic mirror",
+    "magic",
+    "smart",
+    "Electron"
   ],
-  "author": "samheutmaker@gmail.com, jamesvermillion@yahoo.com, cychownat@gmail.com",
+  "author": [
+    { "name": "Natalie Chow", "email": "cychownat@gmail.com" },
+    { "name": "Sam Heutmaker", "email": "samheutmaker@gmail.com" },
+    { "name": "Sabrina Tee", "email": "sabrinatee@me.com" },
+    { "name": "Jose Tello", "email": "josectello@gmail.com" },
+    { "name": "James Vermillion", "email": "jamesvermillion@yahoo.com" }
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/alfred-mirror/alfred-display/issues"
@@ -31,6 +42,7 @@
     "express": "^4.13.4"
   },
   "devDependencies": {
+    "electron-packager": "^5.2.1",
     "electron-prebuilt": "^0.36.10",
     "gulp": "^3.9.1",
     "gulp-eslint": "^2.0.0",
