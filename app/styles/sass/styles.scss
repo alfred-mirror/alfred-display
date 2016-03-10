@@ -1,2 +1,25 @@
 @import 'base/_index';
 @import 'components/_index';
+
+.warning {
+  color: $base-color-red;
+  font-size: 1.2rem;
+}
+
+.voice-result-2 {
+  font-size: 2rem;
+}
+.voice-result-3 {
+  font-size: 3rem;
+}
+.voice-result-4 {
+  font-size: 4rem;
+}
+.voice-result-5 {
+  font-size: 5rem;
+}
+
+.mirror-ghost {
+  opacity: 0.6;
+  max-height: 800px;
+}

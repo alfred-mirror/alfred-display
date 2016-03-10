@@ -2,8 +2,9 @@ module.exports = exports = function(userFile, intervalsOnPage) {
   const loadWidgets = require(__dirname + '/../widgets/load_widgets');
   var currentInterval;
 
-  function renderToMain(content) {
-    $('#module-4').html('<span class="voice-result">' + content + '</span>');
+  function renderToMain(content, size) {
+    size = size || 2;
+    $('#module-4').html('<span class="voice-result-' + size + '">' + content + '</span>');
   }
 
   function clearMainInterval() {
@@ -24,7 +25,7 @@ module.exports = exports = function(userFile, intervalsOnPage) {
 
   var commands = {
     'hello (there)': function() {
-      renderToMain('Hello there.');
+      renderToMain('Hello there.', 3);
     },
 
     '(go to) sleep': function() {
@@ -52,30 +53,29 @@ module.exports = exports = function(userFile, intervalsOnPage) {
       var str = 'Good ' + time;
       var firstName = getFirstName();
       if (firstName) str += ', ' + firstName;
-      renderToMain(str);
+      renderToMain(str, 3);
     },
 
     'throw a dice': function() {
       clearMainInterval();
       var result = Math.floor(Math.random() * 6) + 1;
-      renderToMain(result);
+      renderToMain(result, 3);
     },
 
     'flip a coin': function() {
       clearMainInterval();
       var result = Math.floor(Math.random() * 2);
-      renderToMain((result) ? 'Heads' : 'Tails');
+      renderToMain((result) ? 'Heads' : 'Tails', 3);
     },
 
     '(magic) mirror on the wall': function() {
       clearMainInterval();
-      // replace with creepy mirror ghost image
-      renderToMain('Who\'s the fairest one of all?');
+      $('#module-4').hide().html('<img class="mirror-ghost" src="img/mirror_ghost.png" />').fadeIn(5000);
     },
 
-    'salmons': function() {
+    'tests': function() {
       clearMainInterval();
-      renderToMain('disco');
+      renderToMain('NO', 4);
     }
   };
 

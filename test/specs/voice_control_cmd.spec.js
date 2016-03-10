@@ -15,28 +15,28 @@ describe('Voice command responses', () => {
   it('should respond to "hello"', () => {
     commands['hello (there)']();
     var renderedWidget = document.getElementById('module-4');
-    expect(renderedWidget.innerHTML).to.contain('<span class="voice-result">');
+    expect(renderedWidget.innerHTML).to.contain('<span class="voice-result');
     expect(renderedWidget.innerHTML).to.contain('Hello there.');
   });
 
   it('should respond to "spell *word"', () => {
     commands['(how do you) spell *word']('elephant');
     var renderedWidget = document.getElementById('module-4');
-    expect(renderedWidget.innerHTML).to.contain('<span class="voice-result">');
+    expect(renderedWidget.innerHTML).to.contain('<span class="voice-result');
     expect(renderedWidget.innerHTML).to.contain('E-L-E-P-H-A-N-T');
   });
 
   it('should respond to "good morning alfred"', () => {
     commands['good :time alfred']('morning');
     var renderedWidget = document.getElementById('module-4');
-    expect(renderedWidget.innerHTML).to.contain('<span class="voice-result">');
+    expect(renderedWidget.innerHTML).to.contain('<span class="voice-result');
     expect(renderedWidget.innerHTML).to.contain('Good morning');
   });
 
   it('should respond to "throw a dice"', () => {
     commands['throw a dice']();
     var renderedWidget = document.getElementById('module-4');
-    expect(renderedWidget.innerHTML).to.contain('<span class="voice-result">');
+    expect(renderedWidget.innerHTML).to.contain('<span class="voice-result');
     var diceResult = parseInt(renderedWidget.innerText);
     expect(diceResult).to.be.within(1, 6);
   });
