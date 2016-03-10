@@ -15,9 +15,9 @@ $('#authForm').submit(function(e) {
 
   socket.on('UPDATED_CONFIG', function(userFile) {
     // build modules with config data
-    loadWidgets(userFile);
     console.log(userFile);
-    initVoiceControl(userFile);
+    var intervalsOnPage = loadWidgets(userFile);
+    initVoiceControl(userFile, intervalsOnPage);
   });
 });
 
@@ -38,16 +38,19 @@ var fakeUserFile = {
           origin: { lat: 47.61665, long: -122.34291 },
           destination: { lat: 47.61825, long: -122.35079 },
           mode: 'walking',
-          units: 'metric'
+          units: 'imperial'
         }
       },
       {
         type: 'time',
-        options: { twentyFour: true, dayLong: true, monthLong: true }
+        options: { twentyFour: false, dayLong: false, monthLong: false }
       },
       {
-        type: 'time',
-        options: { twentyFour: false, dayLong: false, monthLong: false }
+        type: 'news',
+        options: {
+          newsContent: 'topStories',
+          top: 3
+        }
       },
       {
         type: 'weather',

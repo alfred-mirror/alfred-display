@@ -1,3 +1,5 @@
+const moment = require('moment');
+
 exports.render = function(id, options, userFile) {
   var widgetLoc = document.getElementById(id);
 
@@ -21,7 +23,7 @@ exports.render = function(id, options, userFile) {
     break;
 
   default:
-    console.log('invalid news content');
+    console.log('invalid news content type');
   }
 
   // ajax call to NYT api - combines base URI with API_KEY
@@ -35,16 +37,32 @@ exports.render = function(id, options, userFile) {
   }
 
   // runs the number of headlines the user would like to see
-  // TODO: styling
   function numOfHeadlines(res) {
-    var string = '';
+    var newsHTML = '';
     for(var i = 0; i < options.top; i++) {
-      string += res.results[i].title + '<br/>';
+      newsHTML += formatRender(res.results[i]);
     }
-    widgetLoc.innerHTML = string;
+    widgetLoc.innerHTML = newsHTML;
   }
 
-  // update news every hour
-  getNews();
-  return setInterval(getNews, 60 * 60 * 1000);
+  function formatRender(story) {
+    return '<article class="news-story">'
+      + '<p class="news-headline">' + story.title + '</p>'
+      + '<p class="news-info">'
+        + story.section + ' / ' + story.subsection + ' &bull; '
+        + moment(story.created_date).fromNow()
+      +'</p></article>';
+  }
+
+  $.ajax(baseURI + apiKey)
+    .then(function(res) {
+      // connection is valid
+      // update news every hour
+      getNews();
+      return setInterval(getNews, 60 * 60 * 1000);
+    }, function(err) {
+      // connection failed
+      console.log(err);
+      widgetLoc.innerHTML = '<p class="warning">There was an error fetching your news feed. Please make sure you have entered a valid token.</p>';
+    });
 };

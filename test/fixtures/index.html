@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Alfred Display Test</title>
+    <link rel="stylesheet" href="../../node_modules/mocha/mocha.css">
+  </head>
+  <body>
+    <div id="mocha"></div>
+
+    <!-- App dependencies -->
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js" charset="utf-8"></script>
+    <script src="http://maps.google.com/maps/api/js?sensor=true"></script>
+
+    <!-- Mocha test suite-->
+    <script src="../../node_modules/mocha/mocha.js"></script>
+    <script>mocha.setup('bdd')</script>
+
+    <!-- Test script -->
+    <script src="../test_bundle.js"></script>
+
+    <!-- Launching mocha -->
+    <script>
+      mocha.run();
+    </script>
+  </body>
+</html>

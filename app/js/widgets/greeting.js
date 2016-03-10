@@ -1,8 +1,8 @@
-const randomGreeting = require(__dirname + '/../lib/random_greeting');
+const getRandom = exports.getRandom = require(__dirname + '/../lib/random_greeting');
 const moment = require('moment');
 
 // getting the time of day
-var getGreetingTime = exports.getGreetingTime = function() {
+var timeOfDay = exports.timeOfDay = function() {
   var splitAM = 12;
   var splitPM = 17;
   var currentHour = parseFloat(moment().format('H'));
@@ -11,8 +11,8 @@ var getGreetingTime = exports.getGreetingTime = function() {
   return 'afternoon';
 };
 
-var getTimebasedGreeting = exports.getTimebasedGreeting = function(firstName) {
-  var greetStr = 'Good ' + getGreetingTime();
+var getTimebased = exports.getTimebased = function(firstName) {
+  var greetStr = 'Good ' + timeOfDay();
   if (firstName) {
     greetStr += ', ' + firstName;
   }
@@ -29,23 +29,23 @@ exports.render = function(id, options, userFile) {
 
   // updating the DOM
   function updateGreeting(greetStr) {
-    widgetLoc.innerHTML = '<p class="greeting">' + greetStr + '</p>';
+    widgetLoc.innerHTML = '<p class="greeting">' + greetStr + '</p>';;
   }
 
   switch (options.greetingStyle) {
   // greeting based on time of day
   case 'timebased':
-    return updateGreeting(getTimebasedGreeting(userFile.name.first));
+    return updateGreeting(getTimebased(userFile.name.first));
 
   // random greeting from library
   case 'random':
-    return updateGreeting(randomGreeting());
+    return updateGreeting(getRandom());
 
   // random greeting, updating every minute
   case 'randomTicker':
-    updateGreeting(randomGreeting());
+    updateGreeting(getRandom());
     return setInterval(function() {
-      updateGreeting(randomGreeting());
+      updateGreeting(getRandom());
     }, 1000);
 
   default:
