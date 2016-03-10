@@ -32,7 +32,6 @@ exports.render = function(id, options, userFile) {
       url: baseURI + apiKey,
       success: function(res){
         numOfHeadlines(res);
-        console.log(res.results);
       }
     });
   }
@@ -42,7 +41,6 @@ exports.render = function(id, options, userFile) {
     var newsHTML = '';
     for(var i = 0; i < options.top; i++) {
       newsHTML += formatRender(res.results[i]);
-      // newsHTML += res.results[i].title + '<br/>';
     }
     widgetLoc.innerHTML = newsHTML;
   }
