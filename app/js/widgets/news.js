@@ -1,3 +1,5 @@
+const moment = require('moment');
+
 exports.render = function(id, options, userFile) {
   var widgetLoc = document.getElementById(id);
 
@@ -30,18 +32,28 @@ exports.render = function(id, options, userFile) {
       url: baseURI + apiKey,
       success: function(res){
         numOfHeadlines(res);
+        console.log(res.results);
       }
     });
   }
 
   // runs the number of headlines the user would like to see
-  // TODO: styling
   function numOfHeadlines(res) {
-    var string = '';
+    var newsHTML = '';
     for(var i = 0; i < options.top; i++) {
-      string += res.results[i].title + '<br/>';
+      newsHTML += formatRender(res.results[i]);
+      // newsHTML += res.results[i].title + '<br/>';
     }
-    widgetLoc.innerHTML = string;
+    widgetLoc.innerHTML = newsHTML;
+  }
+
+  function formatRender(story) {
+    return '<article class="news-story">'
+      + '<p class="news-headline">' + story.title + '</p>'
+      + '<p class="news-info">'
+        + story.section + ' / ' + story.subsection + ' &bull; '
+        + moment(story.created_date).fromNow()
+      +'</p></article>';
   }
 
   $.ajax(baseURI + apiKey)

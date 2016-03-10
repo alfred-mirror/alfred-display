@@ -1,7 +1,6 @@
 .weather {
   p {
     margin: 3px auto;
-    font-size: 1.2rem;
   }
 
   .weather-title {
@@ -9,12 +8,13 @@
   }
 
   .weather-curr {
-    font-size: 48px;
+    font-size: 60px;
     margin: 0;
     display: inline-flex;
+    font-weight: 400;
   }
   .weather-icon {
-    height: 60px;
+    height: 72px;
     display: inline-flex;
     margin-right: 16px;
   }

@@ -31,14 +31,16 @@ exports.render = function(id, options) {
       unitSystem: units
     };
 
-    // TODO: style and add icons (?)
     directionsService.route(directionsRequest, function(res, status) {
       if (status == google.maps.DirectionsStatus.OK) {
         widgetLoc.innerHTML = '<p class="commute">'
+          + 'Your commute<br />'
+          + '<img class="commute-icon" src="img/commute_icons/c_' + options.mode + '.svg" />'
           + res.routes[0].legs[0].distance.text + '<br />'
+          + '<img class="commute-icon" src="img/commute_icons/c_duration.svg" />'
           + res.routes[0].legs[0].duration.text + '</p>';
       } else {
-        widgetLoc.innerHTML = 'Error getting commute';
+        widgetLoc.innerHTML = '<p class="warning">Error getting commute</p>';
       }
     });
   }
