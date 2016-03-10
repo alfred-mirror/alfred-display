@@ -33,7 +33,7 @@ A window should automatically open. At the top of the window, enter your user id
 
 Make sure both the client dashboard's server and the alfred server are also running. The client-dashboard should be now working on the client dashboard's specified port or defaults to ```localhost:3000```.
 
-You can also open the mirror-display on ```localhost:8081``` on your preferred browser. 
+You can also open the mirror-display on ```localhost:8081``` on your preferred browser.
 
 ### Issues? Suggestions? Comments?
 Submit an issue on [GitHub](https://github.com/alfred-mirror/alfred-display/issues).

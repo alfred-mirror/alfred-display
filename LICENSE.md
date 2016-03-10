@@ -11,4 +11,5 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 
 #### Other Projects/External Libraries Used:
 Alfred Display uses code from other projects/external libraries which have their own licenses:
+- [electron](http://electron.atom.io/)
 - [express](https://www.npmjs.com/package/express)
