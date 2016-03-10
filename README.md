@@ -24,9 +24,16 @@ Git clone this repo and install all dependencies:
 git clone https://github.com/alfred-mirror/alfred-display
 cd alfred-display
 npm install
+gulp build:dev
 npm start
 ```
 Note: ```npm install``` takes a long time.
+
+A window should automatically open. At the top of the window, enter your user id (created after you have registered as a user on the [Alfred dashboard](http://alfred-dashboard.herokuapp.com/)).
+
+Make sure both the client dashboard's server and the alfred server are also running. The client-dashboard should be now working on the client dashboard's specified port or defaults to ```localhost:3000```.
+
+You can also open the mirror-display on ```localhost:8081``` on your preferred browser. 
 
 ### Issues? Suggestions? Comments?
 Submit an issue on [GitHub](https://github.com/alfred-mirror/alfred-display/issues).
