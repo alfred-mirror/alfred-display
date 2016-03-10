@@ -12,15 +12,13 @@ console.log(powerSaveBlocker.isStarted(id));
 let mainWindow;
 
 function createWindow () {
-  mainWindow = new BrowserWindow({width: 800, height: 600});
-
-  // add this to newBrowserWindow when ready kiosk:true, autoHideMenuBar:true
+  mainWindow = new BrowserWindow({width: 800, height: 600, kiosk:true, autoHideMenuBar:true});
 
   mainWindow.maximize();
   mainWindow.loadURL('file://' + __dirname + '/build/index.html');
 
   // opens Dev tools
-  mainWindow.webContents.openDevTools();
+  // mainWindow.webContents.openDevTools();
 
   mainWindow.on('closed', function() {
     mainWindow = null;
