@@ -24,7 +24,7 @@ exports.render = function(id, options, userFile) {
     var weatherHTML = '<article class="weather">'
       + '<p class="weather-title">Weather in ' + city + '</p>'
       + '<div class="weather-body">'
-        + '<img class="weather-icon" src=\"img/weather_icons/w_' + imgLoc + '.svg\"></img>'
+        + '<img class="weather-icon" src=\"img/weather_icons/w_' + imgLoc + '.svg\" />'
         + '<p class="weather-curr">' + currTemp + '</p>'
       + '</div>'
       + '<p>High: ' + hiTemp + ' / Low: ' + loTemp + '</p>'
