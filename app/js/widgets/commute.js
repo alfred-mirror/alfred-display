@@ -10,7 +10,7 @@ exports.render = function(id, options) {
   var mode = (options.mode === 'walking')
     ? google.maps.DirectionsTravelMode.WALKING
     : google.maps.DirectionsTravelMode.DRIVING;
-  var units = (options.mode === 'metric')
+  var units = (options.commuteUnits === 'metric')
     ? google.maps.UnitSystem.METRIC
     : google.maps.UnitSystem.IMPERIAL;
 
