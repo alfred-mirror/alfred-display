@@ -3,9 +3,10 @@ exports.render = function(id, options, userFile) {
 
   var apiKey = userFile.weather_token;
 
+  console.log(options);
   // puts all options into a query string
   var locUrl = 'http://api.openweathermap.org/data/2.5/weather?lat='
-  + options.location.lat + '&lon=' + options.location.long + '&units=' + options.units + '&appid=' + apiKey;
+  + options.location.lat + '&lon=' + options.location.long + '&units=' + options.weatherUnits + '&appid=' + apiKey;
 
   function renderWeather(res) {
     var hiTemp = res.main.temp_max.toFixed(0) + '&#176;';
