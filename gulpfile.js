@@ -13,7 +13,7 @@ const files = {
 gulp.task('lint', () => {
   return gulp.src(['**/*.js', '!**/node_modules/**/*', '!**/build/*', '!**/*.min.js', '!**/*bundle.js'])
     .pipe(eslint(__dirname + '/.eslintrc'))
-    .pipe(eslint.format('compact'));
+    .pipe(eslint.format());
 });
 
 // Production dependencies
