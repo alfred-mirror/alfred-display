@@ -1,14 +1,7 @@
 /* eslint-disable no-undef */
+
 exports.render = function(id, options) {
   var widgetLoc = document.getElementById(id);
-
-  // NOTE: OPTIONS FORMAT FOR REFERENCE
-  // options = {
-  //   origin: { lat: 47.61665, long: -122.34291 },
-  //   destination: { lat: 47.61825, long: -122.35079 },
-  //   mode: 'walking',
-  //   units: 'metric'
-  // };
 
   function coordinatesToString(coord) {
     return coord.lat + ',' + coord.long;
@@ -45,7 +38,7 @@ exports.render = function(id, options) {
     });
   }
 
-  // update commute every 2 minutes
+  // update commute every 5 minutes
   getCommute();
-  return setInterval(getCommute, 2 * 60 * 1000);
+  return setInterval(getCommute, 5 * 60 * 1000);
 };

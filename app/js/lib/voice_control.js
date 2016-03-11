@@ -1,4 +1,4 @@
-/* eslint-disable no-undef, no-inner-declarations */
+/* eslint-disable no-undef */
 
 module.exports = exports = function(userFile, intervalsOnPage) {
   if (annyang) {

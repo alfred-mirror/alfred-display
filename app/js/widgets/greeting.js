@@ -22,14 +22,9 @@ var getTimebased = exports.getTimebased = function(firstName) {
 exports.render = function(id, options, userFile) {
   var widgetLoc = document.getElementById(id);
 
-  // NOTE: OPTIONS FORMAT FOR REFERENCE
-  // options = {
-  //   greetingStyle: 'randomTicker'
-  // };
-
   // updating the DOM
   function updateGreeting(greetStr) {
-    widgetLoc.innerHTML = '<p class="greeting">' + greetStr + '</p>';;
+    widgetLoc.innerHTML = '<p class="greeting">' + greetStr + '</p>';
   }
 
   switch (options.greetingStyle) {

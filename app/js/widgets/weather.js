@@ -1,12 +1,6 @@
 exports.render = function(id, options, userFile) {
   var widgetLoc = document.getElementById(id);
 
-  // NOTE: OPTIONS FORMAT FOR REFERENCE
-  // options = {
-  //   location: { lat: 47.61665, long: -122.35079 },
-  //   units: 'imperial'
-  // };
-
   var apiKey = userFile.weather_token;
 
   // puts all options into a query string

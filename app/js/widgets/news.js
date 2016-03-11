@@ -3,15 +3,8 @@ const moment = require('moment');
 exports.render = function(id, options, userFile) {
   var widgetLoc = document.getElementById(id);
 
-  // NOTE: OPTIONS FORMAT FOR REFERENCE
-  // options = {
-  //   newsContent: 'topStories',
-  //   top: 5
-  // };
-
   var apiKey = userFile.news_token;
 
-  //news content - **note needs specific api keys from nyt for different sections
   var baseURI;
   switch (options.newsContent) {
   case 'mostPopular':

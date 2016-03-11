@@ -4,13 +4,6 @@ var widgetLoc;
 exports.render = function(id, options) {
   widgetLoc = document.getElementById(id);
 
-  // NOTE: OPTIONS FORMAT FOR REFERENCE
-  // options = {
-  //   twentyFour: false,
-  //   dayLong: true,
-  //   monthLong: true
-  // };
-
   // set up variables as per options
   var dateFormat = ((options.dayLong) ? 'dddd, ' : 'ddd, ')
   + ((options.monthLong) ? 'MMMM' : 'MMM')
@@ -24,6 +17,7 @@ exports.render = function(id, options) {
     + '<span class="time-clock">' + now.format(timeFormat) + '</span>';
   }
 
+  // update time every 10 seconds
   updateWidget();
   return setInterval(updateWidget, 10000);
 };
