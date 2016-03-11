@@ -1,5 +1,3 @@
-/* eslint-disable no-undef */
-
 const io = require('socket.io-client');
 var socket;
 
@@ -20,52 +18,3 @@ $('#authForm').submit(function(e) {
     initVoiceControl(userFile, intervalsOnPage);
   });
 });
-
-// fake data for rendering test only:
-var fakeUserFile = {
-  name: { first: 'John', last: 'Doe' },
-  twitter_token: 'String',
-  weather_token: 'String',
-  news_token: 'String',
-
-  config: {
-    name: 'My config',
-    color: { main: '#ffffff', accent: '#2196F3' },
-    modules: [
-      {
-        type: 'commute',
-        options: {
-          origin: { lat: 47.61665, long: -122.34291 },
-          destination: { lat: 47.61825, long: -122.35079 },
-          mode: 'walking',
-          units: 'imperial'
-        }
-      },
-      {
-        type: 'time',
-        options: { twentyFour: false, dayLong: false, monthLong: false }
-      },
-      {
-        type: 'news',
-        options: {
-          newsContent: 'topStories',
-          top: 3
-        }
-      },
-      {
-        type: 'weather',
-        options: {
-          location: { lat: 47.61665, long: -122.35079 },
-          units: 'imperial'
-        }
-      },
-      {
-        type: 'greeting',
-        options: { greetingStyle: 'timebased' }
-      }
-    ]
-  }
-};
-
-var intervalsOnPage = loadWidgets(fakeUserFile);
-initVoiceControl(fakeUserFile, intervalsOnPage);

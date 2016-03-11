@@ -44,7 +44,7 @@ describe('Voice command responses', () => {
   it('should respond to "flip a coin"', () => {
     commands['flip a coin']();
     var renderedWidget = document.getElementById('module-4');
-    expect(renderedWidget.innerHTML).to.contain('<span class="voice-result">');
+    expect(renderedWidget.innerHTML).to.contain('<span class="voice-result');
     expect(renderedWidget.innerText).to.be.oneOf(['Heads', 'Tails']);
   });
 });
